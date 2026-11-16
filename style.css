@@ -1,0 +1,12 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+    border-radius: 0.85rem;
+}
+
+#tempValue {
+    font-family: 'Segoe UI', -apple-system, sans-serif;
+    letter-spacing: -1px;
+}

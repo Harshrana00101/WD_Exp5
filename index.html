@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Weather Application</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light min-vh-100 d-flex flex-column justify-content-center py-5">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-7 col-lg-5">
+                <div class="card shadow-sm border-0 overflow-hidden">
+                    <div class="card-header bg-primary text-white text-center py-3">
+                        <h4 class="mb-0 fw-bold"><i class="bi bi-cloud-sun me-2"></i>Weather Forecast</h4>
+                    </div>
+                    <div class="card-body p-4">
+                        <!-- City Search Form -->
+                        <form id="weatherForm" class="input-group mb-4">
+                            <input type="text" id="cityInput" class="form-control" placeholder="Enter city name (e.g. Noida, London)" required autocomplete="off">
+                            <button class="btn btn-primary" type="submit" id="searchBtn">
+                                <i class="bi bi-search"></i> Search
+                            </button>
+                        </form>
+
+                        <!-- Loading Indicator -->
+                        <div id="loadingSpinner" class="text-center py-4 d-none">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Fetching weather data...</span>
+                            </div>
+                            <p class="mt-2 text-muted small">Fetching current conditions...</p>
+                        </div>
+
+                        <!-- Error Feedback Alert -->
+                        <div id="errorAlert" class="alert alert-danger d-none" role="alert">
+                            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                            <span id="errorMessage">Unable to fetch weather. Please try again.</span>
+                        </div>
+
+                        <!-- Weather Results Display Card -->
+                        <div id="weatherResult" class="d-none">
+                            <div class="text-center mb-3">
+                                <h3 id="cityName" class="fw-bold mb-1">--</h3>
+                                <p id="weatherCondition" class="text-secondary text-capitalize mb-2">--</p>
+                                <div class="display-3 fw-bold text-dark my-2" id="tempValue">--°C</div>
+                            </div>
+
+                            <div class="row g-2 mt-3 pt-3 border-top">
+                                <div class="col-4 text-center">
+                                    <div class="p-2 rounded bg-light">
+                                        <i class="bi bi-wind text-primary fs-4 d-block"></i>
+                                        <small class="text-muted d-block">Wind</small>
+                                        <span id="windValue" class="fw-semibold">-- km/h</span>
+                                    </div>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <div class="p-2 rounded bg-light">
+                                        <i class="bi bi-droplet-half text-info fs-4 d-block"></i>
+                                        <small class="text-muted d-block">Humidity</small>
+                                        <span id="humidityValue" class="fw-semibold">--%</span>
+                                    </div>
+                                </div>
+                                <div class="col-4 text-center">
+                                    <div class="p-2 rounded bg-light">
+                                        <i class="bi bi-compass text-secondary fs-4 d-block"></i>
+                                        <small class="text-muted d-block">Wind Dir</small>
+                                        <span id="windDirValue" class="fw-semibold">--°</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Prompt placeholder -->
+                        <div id="defaultPrompt" class="text-center py-4 text-muted">
+                            <i class="bi bi-geo-alt fs-1 d-block mb-2"></i>
+                            <p class="mb-0">Type a city name to view live weather conditions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
